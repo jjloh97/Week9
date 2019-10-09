@@ -65,12 +65,12 @@ onGetActors() {
 }
 
 
-
 //Saving actor name and id
 onSelectActor(item) {	 
   this.actorsName = item.name;
   this.actorsId = item._id;
 }
+
 //Saving movie title, year and id
 onSelectUpdate(item) {
   this.title = item.title;
@@ -80,7 +80,7 @@ onSelectUpdate(item) {
 }
 
 onUpdateMovie() {
-  if (this.actorsId !=""){
+  if (this.actorsId != ""){
     this.movieActor.push(this.actorsId);
   }
   let obj = { title: this.title, year: this.year ,actors:this.movieActor};
@@ -108,6 +108,5 @@ resetValues() {
   this.actorsName = "";
   this.actorsId = "";
 }
-
 
 }

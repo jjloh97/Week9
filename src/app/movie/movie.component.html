@@ -20,6 +20,9 @@
     <li class="nav-item" style="padding-left:0.2in">
       <a class="btn btn-primary" (click)="changeSection(5)">Add an Actor to a Movie</a>
     </li>
+    <li class="nav-item" style="padding-left:0.2in">
+      <a class="btn btn-primary" (click)="changeSection(6)">List All Actors in at least 2 movies</a>
+    </li>
   </ul>
 </nav>
 
@@ -138,3 +141,19 @@
       </div>
       
 </div>
+
+<!-- Section 6: List all actors that are acting in at least 2 movies -->
+<div class="section" *ngIf="section==6">
+    <table class="table table-striped">
+      <tr>
+        <th>Name</th>
+        <th>Birth Year</th>
+      </tr>
+      <ng-container *ngIf= "movieActor > 2">
+          <tr *ngFor="let item of actorsDB">
+        <td>{{item.name}}</td>
+        <td>{{item.bYear}}</td>
+        </tr>
+      </ng-container>
+    </table>
+  </div>
